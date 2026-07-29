@@ -49,6 +49,10 @@ class LoginActivity:AppCompatActivity(){
                     "USERNAME",
                     user.username
                 )
+                intent.putExtra(
+                    "FIRSTNAME",
+                    user.firstname
+                )
                 startActivity(
                     intent
                 )
