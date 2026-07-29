@@ -10,25 +10,44 @@ class DatabaseHelper(context: Context)
 
         val query =
             """
-            CREATE TABLE users(
+            CREATE TABLE employees(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT,
-                password TEXT
+                firstname TEXT NOT NULL,
+                lastname TEXT NOT NULL,
+                gender TEXT,
+                department TEXT,
+                username TEXT NOT NULL,
+                password TEXT NOT NULL,
+                isadmin INTEGER NOT NULL DEFAULT 0
             )
             """
 
         db.execSQL(query)
 
-
         db.execSQL(
             """
-            INSERT INTO users(username,password)
-            VALUES('admin','12345')
+            INSERT INTO employees(firstname,lastname,gender,department,username,password,isadmin)
+            VALUES('Chester','Kent','Male','IT','admin','12345', 1)
             """
+        )
+        db.execSQL(
+            """
+        INSERT INTO employees
+        (firstname,lastname,gender,department,username,password,isadmin)
+        VALUES
+        ('John','Smith','Male','HR','john','11111',0)
+        """
+        )
+        db.execSQL(
+            """
+        INSERT INTO employees
+        (firstname,lastname,gender,department,username,password,isadmin)
+        VALUES
+        ('Mary','Jones','Female','Finance','mary','22222',0)
+        """
         )
 
     }
-
 
     override fun onUpgrade(
         db: SQLiteDatabase,
@@ -36,7 +55,7 @@ class DatabaseHelper(context: Context)
         newVersion:Int
     ){
 
-        db.execSQL("DROP TABLE IF EXISTS users")
+        db.execSQL("DROP TABLE IF EXISTS employees")
         onCreate(db)
 
     }

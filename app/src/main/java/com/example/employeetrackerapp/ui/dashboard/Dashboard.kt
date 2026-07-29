@@ -1,24 +1,34 @@
 package com.example.employeetrackerapp.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.employeetrackerapp.R
-import com.example.employeetrackerapp.ui.login.LoginViewModel
+import com.example.employeetrackerapp.databinding.ActivityDashboardBinding
+import com.example.employeetrackerapp.ui.employees.EmployeeListActivity
 
 class Dashboard : AppCompatActivity() {
+    private lateinit var binding: ActivityDashboardBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_dashboard)
+        binding =
+            ActivityDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val userId = intent.getIntExtra("USER_ID", -1)
         val username = intent.getStringExtra("USERNAME")
-        Toast.makeText(this, "Welcome to Employee Tracker App!", Toast.LENGTH_LONG).show()
+        val firstname = intent.getStringExtra("FIRSTNAME")
+        Toast.makeText(this, "Welcome to Employee Tracker App $firstname!", Toast.LENGTH_LONG).show()
         Log.d("printUser: ", "$userId $username")
+
+        binding.llEmployees.setOnClickListener {
+            val intent = Intent(
+                this,
+                EmployeeListActivity::class.java
+            )
+            startActivity(intent)
+        }
+
     }
 }

@@ -13,8 +13,8 @@ class UserDao(
         val cursor =
             database.rawQuery(
                 """
-                   Select id, username, password
-                   FROM users
+                   Select *
+                   FROM employees
                    WHERE username=?
                    AND password=?
                 """,
@@ -39,6 +39,10 @@ class UserDao(
                 password =
                     cursor.getString(
                         cursor.getColumnIndexOrThrow("password")
+                    ),
+                firstname =
+                    cursor.getString(
+                        cursor.getColumnIndexOrThrow("firstname")
                     )
             )
         }
