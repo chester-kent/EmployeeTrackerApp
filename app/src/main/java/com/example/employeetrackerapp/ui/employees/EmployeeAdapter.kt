@@ -1,5 +1,6 @@
 package com.example.employeetrackerapp.ui.employees
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,7 +8,9 @@ import com.example.employeetrackerapp.data.model.Employees
 import com.example.employeetrackerapp.databinding.ItemEmployeeBinding
 
 class EmployeeAdapter(
-    private val employees: List<Employees>
+    private val employees: List<Employees>,
+    private val onEditClick: (Employees) -> Unit,
+    private val onDeleteClick: (Employees) -> Unit,
 ): RecyclerView.Adapter<EmployeeAdapter.EmployeeViewHolder>() {
 
     class EmployeeViewHolder(
@@ -26,6 +29,7 @@ class EmployeeAdapter(
         return EmployeeViewHolder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(
         holder: EmployeeViewHolder,
         position: Int
@@ -38,6 +42,13 @@ class EmployeeAdapter(
 
             txtDepartment.text =
                 employees.department
+
+            btnEdit.setOnClickListener {
+                onEditClick(employees)
+            }
+            btnDelete.setOnClickListener {
+                onDeleteClick(employees)
+            }
         }
     }
 

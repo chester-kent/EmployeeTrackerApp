@@ -48,4 +48,69 @@ class EmployeeDao(
         return result != 1L
 
     }
+
+    fun getEmployeeById(id: Int): Employees? {
+        val db = dbHelper.readableDatabase
+
+        val cursor = db.rawQuery(
+            """
+                Select *
+                From employees
+                where id = ?    
+            """,
+            arrayOf(id.toString())
+        )
+
+        var employee: Employees? = null
+
+        if (cursor.moveToFirst()) {
+            employee = Employees(
+                id = cursor.getInt(
+                    cursor.getColumnIndexOrThrow("id")
+                ),
+                firstname = cursor.getString(
+                    cursor.getColumnIndexOrThrow("firstname")
+                ),
+                lastname = cursor.getString(
+                    cursor.getColumnIndexOrThrow("lastname")
+                ),
+                gender = cursor.getString(
+                    cursor.getColumnIndexOrThrow("gender")
+                ),
+                department = cursor.getString(
+                    cursor.getColumnIndexOrThrow("department")
+                ),
+                username = cursor.getString(
+                    cursor.getColumnIndexOrThrow("username")
+                ),
+                password = cursor.getString(
+                    cursor.getColumnIndexOrThrow("password")
+                )
+            )
+        }
+        cursor.close()
+        return employee
+    }
+
+    fun updateEmployee(employees: Employees): Boolean {
+        val db = dbHelper.writableDatabase
+
+        val values = ContentValues()
+        values.put("firstname", employees.firstname)
+        values.put("lastname", employees.lastname)
+        values.put("gender", employees.gender)
+        values.put("department", employees.department)
+        values.put("username", employees.username)
+        values.put("password", employees.password)
+
+        val result = db.update(
+            "employees",
+            values,
+            "id = ?",
+            arrayOf(employees.id.toString())
+        )
+
+        return result > 0
+
+    }
 }
