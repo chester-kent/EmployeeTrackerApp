@@ -33,4 +33,12 @@ class EmployeeViewModel (private val repository : EmployeeRepository
         registerResult.value = repository.insertEmployee(employee)
     }
 
+    fun getEmployeeById(id: Int): Employees? {
+        return repository.getEmployeeById(id)
+    }
+
+    fun updateEmployee(employees: Employees) {
+        repository.updateEmployee(employees)
+    }
+
 }

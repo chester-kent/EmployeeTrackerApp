@@ -11,4 +11,12 @@ class EmployeeRepository(private val employeeDao: EmployeeDao) {
     fun insertEmployee(employee: Employees): Boolean {
         return employeeDao.insertEmployee(employee)
     }
+
+    fun getEmployeeById(id: Int): Employees? {
+        return employeeDao.getEmployeeById(id)
+    }
+
+    fun updateEmployee(employees: Employees) {
+         employeeDao.updateEmployee(employees)
+    }
 }

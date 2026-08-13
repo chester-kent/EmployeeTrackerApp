@@ -34,7 +34,28 @@ class EmployeeListActivity : AppCompatActivity() {
 
         viewModel.employees.observe(this){ employees ->
             binding.rvEmployees.adapter =
-                EmployeeAdapter(employees)
+                EmployeeAdapter(
+                    employees,
+
+                    onEditClick = {
+                        employees ->
+                                val intent = Intent(
+                                    this,
+                                    RegisterEmployeeActivity::class.java
+                                )
+                        intent.putExtra(
+                            "EMPLOYEE_ID",
+                            employees.id
+                        )
+                        startActivity(intent)
+                    },
+
+                    onDeleteClick = {
+                        employees ->
+                        // Delete
+                    }
+
+                )
         }
 
 
