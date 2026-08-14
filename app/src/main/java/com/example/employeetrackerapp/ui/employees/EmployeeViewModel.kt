@@ -41,4 +41,8 @@ class EmployeeViewModel (private val repository : EmployeeRepository
         repository.updateEmployee(employees)
     }
 
+    fun deleteEmployee(id: Int): Boolean {
+        return repository.deleteEmployee(id)
+    }
+
 }

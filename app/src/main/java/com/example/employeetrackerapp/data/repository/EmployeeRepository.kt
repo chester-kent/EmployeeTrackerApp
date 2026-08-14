@@ -19,4 +19,8 @@ class EmployeeRepository(private val employeeDao: EmployeeDao) {
     fun updateEmployee(employees: Employees) {
          employeeDao.updateEmployee(employees)
     }
+
+    fun deleteEmployee(id: Int): Boolean{
+        return employeeDao.deleteEmployee(id)
+    }
 }
