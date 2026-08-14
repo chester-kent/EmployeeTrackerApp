@@ -113,4 +113,15 @@ class EmployeeDao(
         return result > 0
 
     }
+
+    fun deleteEmployee(id: Int): Boolean {
+        val db = dbHelper.writableDatabase
+
+        val result = db.delete(
+            "employees",
+            "id = ?",
+            arrayOf(id.toString())
+        )
+        return result > 0
+    }
 }

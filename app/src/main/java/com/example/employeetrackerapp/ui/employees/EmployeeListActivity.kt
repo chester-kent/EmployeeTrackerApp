@@ -2,6 +2,8 @@ package com.example.employeetrackerapp.ui.employees
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -52,12 +54,37 @@ class EmployeeListActivity : AppCompatActivity() {
 
                     onDeleteClick = {
                         employees ->
-                        // Delete
-                    }
 
+                        AlertDialog.Builder(this)
+                            .setTitle("Confirmation")
+                            .setMessage(
+                                "Are you sure you want to delete " +
+                                "${employees.firstname} ${employees.lastname}?"
+                            )
+                            .setNegativeButton("Cancel", null)
+                            .setPositiveButton("Delete") { _,_ ->
+                                val success =
+                                    viewModel.deleteEmployee(employees.id)
+
+                                if (success) {
+                                    Toast.makeText(
+                                        this,
+                                        "Employee deleted successfully",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    viewModel.loadEmployees()
+                                } else {
+                                    Toast.makeText(
+                                        this,
+                                        "Failed to deleted employee",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
+                            .show()
+                    }
                 )
         }
-
 
         binding.fabAddEmployee.setOnClickListener {
             val intent = Intent (
