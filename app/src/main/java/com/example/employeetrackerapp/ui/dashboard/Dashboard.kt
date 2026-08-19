@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.employeetrackerapp.databinding.ActivityDashboardBinding
 import com.example.employeetrackerapp.ui.employees.EmployeeListActivity
+import com.example.employeetrackerapp.ui.locations.LocationList
 
 class Dashboard : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
@@ -26,6 +27,14 @@ class Dashboard : AppCompatActivity() {
             val intent = Intent(
                 this,
                 EmployeeListActivity::class.java
+            )
+            startActivity(intent)
+        }
+
+        binding.llLocation.setOnClickListener {
+            val intent = Intent(
+                this,
+                LocationList::class.java
             )
             startActivity(intent)
         }

@@ -1,4 +1,4 @@
-package com.example.employeetrackerapp.ui.employees
+package com.example.employeetrackerapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
