@@ -1,5 +1,6 @@
 package com.example.employeetrackerapp.ui.employees
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -11,10 +12,13 @@ import com.example.employeetrackerapp.data.dao.EmployeeDao
 import com.example.employeetrackerapp.data.database.DatabaseHelper
 import com.example.employeetrackerapp.data.repository.EmployeeRepository
 import com.example.employeetrackerapp.databinding.ActivityEmployeeListBinding
+import com.example.employeetrackerapp.viewmodel.EmployeeViewModel
+import com.example.employeetrackerapp.viewmodel.EmployeeViewModelFactory
 
 class EmployeeListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEmployeeListBinding
     private lateinit var viewModel: EmployeeViewModel
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =
@@ -35,6 +39,10 @@ class EmployeeListActivity : AppCompatActivity() {
             LinearLayoutManager(this)
 
         viewModel.employees.observe(this){ employees ->
+
+            binding.tvEmployeeCount.text =
+                "${employees.size} Employees"
+
             binding.rvEmployees.adapter =
                 EmployeeAdapter(
                     employees,

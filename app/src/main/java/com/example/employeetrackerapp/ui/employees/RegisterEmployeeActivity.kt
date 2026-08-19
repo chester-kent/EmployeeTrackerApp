@@ -11,6 +11,8 @@ import com.example.employeetrackerapp.data.database.DatabaseHelper
 import com.example.employeetrackerapp.data.model.Employees
 import com.example.employeetrackerapp.data.repository.EmployeeRepository
 import com.example.employeetrackerapp.databinding.ActivityRegisterEmployeeBinding
+import com.example.employeetrackerapp.viewmodel.EmployeeViewModel
+import com.example.employeetrackerapp.viewmodel.EmployeeViewModelFactory
 
 class RegisterEmployeeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterEmployeeBinding

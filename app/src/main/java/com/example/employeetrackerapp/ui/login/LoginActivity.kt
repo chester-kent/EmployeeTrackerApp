@@ -8,6 +8,7 @@ import com.example.employeetrackerapp.data.database.DatabaseHelper
 import com.example.employeetrackerapp.data.repository.UserRepository
 import com.example.employeetrackerapp.databinding.ActivityLoginBinding
 import com.example.employeetrackerapp.ui.dashboard.Dashboard
+import com.example.employeetrackerapp.viewmodel.LoginViewModel
 
 
 class LoginActivity:AppCompatActivity(){

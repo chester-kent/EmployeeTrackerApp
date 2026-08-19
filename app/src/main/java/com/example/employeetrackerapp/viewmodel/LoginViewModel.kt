@@ -1,4 +1,4 @@
-package com.example.employeetrackerapp.ui.login
+package com.example.employeetrackerapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.example.employeetrackerapp.data.model.User
