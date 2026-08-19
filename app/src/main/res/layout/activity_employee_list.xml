@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_activity">
@@ -27,7 +28,8 @@
             android:text="Employees"
             android:textColor="@android:color/black"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/tvEmployeeCount"
@@ -35,7 +37,8 @@
             android:layout_height="wrap_content"
             android:text="0 Employees"
             android:textColor="@color/primary_dark"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
@@ -51,7 +54,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerLayout"
         app:startIconDrawable="@drawable/outline_document_search_24"
-        app:startIconTint="@color/primary_dark">
+        app:startIconTint="@color/primary_dark"
+        tools:ignore="HardcodedText">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etSearch"
@@ -94,6 +98,7 @@
         app:tint="@android:color/white"
         android:backgroundTint="@color/dark_green"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

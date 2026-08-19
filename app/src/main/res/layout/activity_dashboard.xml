@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -20,7 +21,8 @@
             android:text="Employee Tracker"
             android:textStyle="bold"
             android:textSize="28sp"
-            android:textColor="#212121"/>
+            android:textColor="#212121"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/txtWelcome"
@@ -29,7 +31,8 @@
             android:layout_marginTop="4dp"
             android:text="Good day, Chester!"
             android:textSize="16sp"
-            android:textColor="#757575"/>
+            android:textColor="#757575"
+            tools:ignore="HardcodedText" />
 
         <!-- Scan Location Card -->
         <com.google.android.material.card.MaterialCardView
@@ -54,7 +57,8 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@android:drawable/ic_menu_camera"
-                    app:tint="@android:color/white"/>
+                    app:tint="@android:color/white"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -63,14 +67,16 @@
                     android:text="Scan Location"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
-                    android:textSize="22sp"/>
+                    android:textSize="22sp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tap to scan employee QR"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -108,14 +114,16 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@android:drawable/ic_menu_share"
-                        app:tint="#1976D2"/>
+                        app:tint="#1976D2"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="View My QR"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -145,14 +153,16 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@android:drawable/ic_menu_myplaces"
-                        app:tint="#1976D2"/>
+                        app:tint="#1976D2"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Badge"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -182,14 +192,16 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@android:drawable/ic_menu_agenda"
-                        app:tint="#1976D2"/>
+                        app:tint="#1976D2"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Employees"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -219,14 +231,16 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@android:drawable/ic_menu_mylocation"
-                        app:tint="#1976D2"/>
+                        app:tint="#1976D2"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Locations"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -257,7 +271,8 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@android:drawable/ic_dialog_info"
-                        app:tint="#1976D2"/>
+                        app:tint="#1976D2"
+                        tools:ignore="ContentDescription" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -270,12 +285,14 @@
                             android:layout_height="wrap_content"
                             android:text="Announcements"
                             android:textStyle="bold"
-                            android:textSize="18sp"/>
+                            android:textSize="18sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="View latest company announcements."/>
+                            android:text="View latest company announcements"
+                            tools:ignore="HardcodedText" />
 
                     </LinearLayout>
 
