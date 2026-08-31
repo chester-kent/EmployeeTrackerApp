@@ -52,7 +52,21 @@ class LocationList : AppCompatActivity() {
                     locations = locations,
 
                     onViewQrClick = { location ->
-                        // QR screen will be added later
+                        val qrValue =
+                            "${location.locationName}|${location.description}|${location.qrCode}"
+
+                        val intent =
+                            Intent (
+                                this,
+                                LocationViewQr::class.java
+                            )
+
+                        intent.putExtra(
+                            "QR_VALUE",
+                            qrValue
+                        )
+
+                        startActivity(intent)
                     },
                     onEditClick = { location ->
                         val intent =
