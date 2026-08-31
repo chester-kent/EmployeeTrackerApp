@@ -46,6 +46,10 @@
             android:name=".ui.locations.LocationForm"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.locations.LocationViewQr"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
